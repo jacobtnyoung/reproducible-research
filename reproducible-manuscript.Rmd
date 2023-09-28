@@ -77,6 +77,9 @@ myModel <- ergm( myNet ~ edges + nodeifactor( "HighFiver" ) + nodeofactor( "High
 
 ```
 
+!!!HERE: need to just make this a figure and paste it
+
+
 ```{r print-table, results = "asis"}
 
 library( stargazer ) # for the tables
@@ -96,7 +99,6 @@ stargazer( myModel,
            df=FALSE,
            notes.align = "l",
            digits = 3,
-           style="ajs",
            covariate.labels = c( 
              "Graph Density",
              "High Fiver Indegree",
