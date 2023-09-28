@@ -1,0 +1,114 @@
+---
+title: "Your Typical Study"
+author: "Reviewer 2"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set( echo = FALSE, warning = FALSE, eval = TRUE, message = FALSE )
+
+```
+
+```{r create-random-network}
+
+library( sna ) # for plotting
+library( network ) # for working with network objects
+
+# create the random network -----
+
+# define number of nodes we want
+nNodes <- 100
+
+# set seed to reproduce exactly
+set.seed( 12345 )
+
+# generate the random network
+myNet <- as.network( 
+  rgraph( nNodes, 1, tprob = 0.025 ), 
+  directed = TRUE 
+  )
+
+# create a vertex attribute
+myNet %v% "HighFiver" <- rbinom( nNodes, 1, 0.25 ) + 1
+
+```
+
+## Introduction
+
+Researchers are interested in stuff. Particularly networks because they are awesome. But, we don't know a lot about the whether a random variable called "high-fiving" is related to randomly formed network connections. We just don't. 
+
+## Literature Review
+
+We know a lot about this one thing, but not this other thing. That is, high-fiving in a random network.
+
+## Current Study
+
+This study is going to study that "other thing." This study is important, because I, Reviewer 2 said so. 
+
+## Approach
+
+We are going to make a random network of 100 people. Then, we are going to create an attribute called *high fiver* that is just a random draw from a binomial distribution. 
+
+```{r plot-random-network}
+
+gplot( myNet,
+       vertex.col = myNet %v% "HighFiver",
+       main = "Plot of a Random Network \nwith a Random Attribute"
+)
+
+```
+
+Then we are going to use an exponential random graph model, because they are DAF. That is a fact. I mean, look at this *sweet* equation:
+
+EQUATION
+
+## Results
+
+So, do high-fivers send and receive more ties? Well, here are the results:
+
+```{r model}
+
+library( ergm ) # for the ergm
+
+# estimate the model
+myModel <- ergm( myNet ~ edges + nodeifactor( "HighFiver" ) + nodeofactor( "HighFiver" ) )
+
+```
+
+```{r print-table, results = "asis"}
+
+library( stargazer ) # for the tables
+
+stargazer( myModel,
+           title = "ERGMs for Random Network",
+           dep.var.caption = "",
+           dep.var.labels = "",
+           column.labels = "",
+           dep.var.labels.include = FALSE,
+           coef= list( coef( myModel ) ),
+           se= list( sqrt( diag( myModel$covar ) ) ),
+           type = "latex" ,
+           show.se = TRUE,
+           single.row = FALSE,
+           no.space=FALSE,
+           df=FALSE,
+           notes.align = "l",
+           digits = 3,
+           style="ajs",
+           covariate.labels = c( 
+             "Graph Density",
+             "High Fiver Indegree",
+             "High Fiver Outdegree" )
+           )
+
+```
+
+## Conclusions
+
+You can reproduce these results yourself. That is straight rad homey. 
+
+## References
+
+*Here is where you cite yourself and your buddies*
