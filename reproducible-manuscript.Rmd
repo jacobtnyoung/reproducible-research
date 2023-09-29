@@ -37,36 +37,58 @@ myNet %v% "HighFiver" <- rbinom( nNodes, 1, 0.25 ) + 1
 
 ## Introduction
 
+In the realm of social interactions, the seemingly simple gesture of a high five has long held a special place. It is a universal symbol of celebration, camaraderie, and mutual appreciation. Yet, beneath its apparent simplicity lies a fascinating question: could the act of giving someone a high five be linked to the number and quality of friendships an individual possesses? This question forms the basis of our fictitious research endeavor - an exploration into the uncharted territory of the "High-Five Hypothesis."
+
+Throughout history, the dynamics of human friendships have intrigued scholars, psychologists, and individuals alike. Friendships are essential components of human social life, contributing to emotional well-being, mental health, and overall happiness. While previous research has explored various factors influencing the formation and maintenance of friendships, the potential role of physical gestures, such as the high five, remains underexplored. Our fictitious research seeks to shed light on whether this simple and joyful act could have a meaningful correlation with one's social connections.
+
+The act of giving a high five is more than just a spontaneous gesture of approval; it carries the power to convey positive emotions and strengthen bonds between individuals. However, the extent to which high fives impact the quantity and quality of friendships is a subject that has yet to be rigorously examined. This research aims to bridge this gap in the existing literature by delving into the psychology behind the high five, its frequency, and the relationships it might foster. In this introduction, we will provide an overview of the research's objectives, theoretical framework, methodology, and anticipated implications for our understanding of social dynamics. Join us on this imaginative journey into the world of high fives and friendships, where we aim to uncover whether this seemingly innocuous gesture has a deeper significance in our social lives than we ever imagined.
+
 Researchers are interested in stuff. Particularly networks because they are awesome. But, we don't know a lot about the whether a random variable called "high-fiving" is related to randomly formed network connections. We just don't. 
+
+<br>
 
 ## Literature Review
 
-We know a lot about this one thing, but not this other thing. That is, high-fiving in a random network.
+Within the landscape of fictitious research, one intriguing study by Dr. Emily Johnson (2023) examined the correlation between the frequency of high-fives exchanged within a group of individuals and the structure of their social networks. Using a fictitious High-Five Frequency Index (HFFI), the study identified a statistically significant positive relationship. Participants who engaged in more frequent high-fives were found to possess larger and more diverse social networks. While the study faced methodological limitations, such as potential self-report biases, it offers an intriguing starting point for considering the potential influence of high-fives on social connectivity.
+
+Another fictitious study by Prof. Benjamin Garcia (2022) took a longitudinal approach, investigating the hypothesis that high-fives act as social bonds, strengthening existing friendships over time. The study findings suggested that individuals who consistently exchanged high-fives with their friends reported increased feelings of closeness and trust within those relationships. While the research was conducted within the realm of fiction, it underscores the importance of high-fives in maintaining and enhancing social bonds.
+
+In a different vein, Dr. Sarah Smithson's fictitious investigation (2021) explored the implications of high-fiving within a corporate setting. The research examined the influence of high-fives on employees' social capital in the workplace. The findings revealed that employees who engaged in high-fives with colleagues reported higher levels of job satisfaction, a sense of belonging, and improved working relationships. While the causal relationship remains hypothetical in this study, it raises significant questions about the potential role of high-fives in building professional networks and social capital.
+
+Dr. Michael Brown (2020) conducted a fictitious study examining how high-five frequency relates to the diversity of one's social network. Using a fictitious Social Network Diversity Index (SNDI), the research found that individuals who engaged in a broad spectrum of high-fives with different groups of people tended to have more varied and inclusive social networks. While this study exists purely in the realm of imagination, it encourages us to contemplate how small gestures might influence the composition of our social circles.
+
+<br>
 
 ## Current Study
 
-This study is going to study that "other thing." This study is important, because I, Reviewer 2 said so. 
+To sum up, we know a lot about this one thing from these fake studies, but not this other thing. That is, high-fiving in a random network. This study is going to study that "other thing." This study is important, because I, Reviewer 2 said so. 
+
+<br>
 
 ## Approach
 
 We are going to make a random network of 100 people. Then, we are going to create an attribute called *high fiver* that is just a random draw from a binomial distribution. 
 
-```{r plot-random-network}
-
-gplot( myNet,
-       vertex.col = myNet %v% "HighFiver",
-       main = "Plot of a Random Network \nwith a Random Attribute"
-)
-
-```
-
 Then we are going to use an exponential random graph model, because they are DAF. That is a fact. I mean, look at this *sweet* equation:
 
-EQUATION
+the general expression of the model is:  
+
+$logit\Bigg(P \Bigg(Y_{ij}=1 \> | \> n \> actors, Y_{ij}^C\Bigg) \Bigg) = \sum_{k=1}^\kappa \theta_k\delta_{z_k(y)}$  
+
+As with logistic regression, the logit transformation can be used to re-express the equation as the conditional probability of a tie:
+
+
+$\Bigg(P \Bigg(Y_{ij}=1 \> | \> n \> actors, Y_{ij}^C\Bigg) \Bigg) = logistic(\theta_1\delta_{z_1(y)+\theta_2\delta_{z_2}(y)...})$   
+
+Here, the coefficients are expressed as the conditional log-odds of a single actor pair. That is, how likely we are to see a tie between *i* and *j*, given some model terms.
+
+<br>
 
 ## Results
 
 So, do high-fivers send and receive more ties? Well, here are the results:
+
+
 
 ```{r model}
 
@@ -77,7 +99,21 @@ myModel <- ergm( myNet ~ edges + nodeifactor( "HighFiver" ) + nodeofactor( "High
 
 ```
 
-!!!HERE: need to just make this a figure and paste it
+
+```{r}
+
+library( knitr ) # for the table
+library( broom ) # to clean up the data for the table
+
+# Tidy up the model results
+model_summary <- tidy( myModel )
+
+# Create a table using kable()
+kable(model_summary, caption = "Regression Model Summary")
+
+
+```
+
 
 
 ```{r print-table, results = "asis"}
