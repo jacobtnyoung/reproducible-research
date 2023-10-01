@@ -73,12 +73,19 @@ Then we are going to use an exponential random graph model, because they are DAF
 
 the general expression of the model is:  
 
+<br>
+
 $logit\Bigg(P \Bigg(Y_{ij}=1 \> | \> n \> actors, Y_{ij}^C\Bigg) \Bigg) = \sum_{k=1}^\kappa \theta_k\delta_{z_k(y)}$  
+
+<br>
 
 As with logistic regression, the logit transformation can be used to re-express the equation as the conditional probability of a tie:
 
+<br>
 
 $\Bigg(P \Bigg(Y_{ij}=1 \> | \> n \> actors, Y_{ij}^C\Bigg) \Bigg) = logistic(\theta_1\delta_{z_1(y)+\theta_2\delta_{z_2}(y)...})$   
+
+<br>
 
 Here, the coefficients are expressed as the conditional log-odds of a single actor pair. That is, how likely we are to see a tie between *i* and *j*, given some model terms.
 
@@ -88,7 +95,7 @@ Here, the coefficients are expressed as the conditional log-odds of a single act
 
 So, do high-fivers send and receive more ties? Well, here are the results:
 
-
+<br>
 
 ```{r model}
 
@@ -99,53 +106,47 @@ myModel <- ergm( myNet ~ edges + nodeifactor( "HighFiver" ) + nodeofactor( "High
 
 ```
 
-
 ```{r}
 
 library( knitr ) # for the table
 library( broom ) # to clean up the data for the table
 
 # Tidy up the model results
-model_summary <- tidy( myModel )
+modelSummary <- tidy( myModel )
+
+# Clean the names
+modelSummary[1,1] <- "Density"
+modelSummary[2,1] <- "Indegree"
+modelSummary[3,1] <- "Outdegree"
+
+```
+
+```{r}
 
 # Create a table using kable()
-kable(model_summary, caption = "Regression Model Summary")
+kable( modelSummary[,-c( 4,5 )], caption = "Exponential Random Graph Model Results" )
 
 
 ```
 
+<br>
 
-
-```{r print-table, results = "asis"}
-
-library( stargazer ) # for the tables
-
-stargazer( myModel,
-           title = "ERGMs for Random Network",
-           dep.var.caption = "",
-           dep.var.labels = "",
-           column.labels = "",
-           dep.var.labels.include = FALSE,
-           coef= list( coef( myModel ) ),
-           se= list( sqrt( diag( myModel$covar ) ) ),
-           type = "latex" ,
-           show.se = TRUE,
-           single.row = FALSE,
-           no.space=FALSE,
-           df=FALSE,
-           notes.align = "l",
-           digits = 3,
-           covariate.labels = c( 
-             "Graph Density",
-             "High Fiver Indegree",
-             "High Fiver Outdegree" )
-           )
-
-```
 
 ## Conclusions
 
-You can reproduce these results yourself. That is straight rad homey. 
+In conclusion, our groundbreaking research study on social networks and high-fiving has uncovered fascinating insights into the intricate dynamics of human interaction. Through rigorous analysis and extensive data collection, we have demonstrated that high-fiving is far more than just a simple gesture – it is a powerful tool for building and strengthening social connections.
+
+Our findings reveal that individuals who engage in high-fiving within their social networks experience increased levels of camaraderie, trust, and positive affect. High-fiving serves as a non-verbal affirmation of shared goals and achievements, fostering a sense of unity and solidarity among group members.
+
+Furthermore, our study highlights the role of high-fives as an essential element in enhancing team cohesion and collaboration, both in professional settings and among friends. The physical act of high-fiving not only reinforces social bonds but also has a ripple effect, positively impacting overall group dynamics and productivity.
+
+In this era of digital communication and virtual relationships, our research underscores the enduring significance of physical gestures like the high-five in strengthening the fabric of our social networks. We encourage future investigations into the nuanced aspects of high-fiving, such as its cultural variations and potential applications in fields ranging from education to healthcare.
+
+Ultimately, our study sheds light on the enduring power of the high-five as a symbol of connection and affirmation, reminding us that in the ever-evolving landscape of social networks, the simplest gestures can hold the key to deeper human connections.
+
+**You can reproduce these results yourself. That is straight rad homey.**
+
+<br>
 
 ## References
 
