@@ -74,6 +74,8 @@ Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-
 
 ### *Now what?*
 
+First thing, check out this [tutorial](https://jacobtnyoung.github.io/RWorkshop/topics/R-markdown.html) on how to use RMarkdown in RStudio. Got it? Good.
+
 Ok, so we have everything documented, now what do we do? Ideally, I could store it online, track the changes that I make, make it available to others to replicate the code, etc.
 
 GitHub does that!
