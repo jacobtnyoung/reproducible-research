@@ -72,9 +72,7 @@ Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-
 
 *Now*, let's take a look at the RMarkdown file that created the manuscript above: ["reproducible-manuscript.Rmd"](reproducible-manuscript.Rmd).
 
-<br>
-
-### *What next?*
+### *Now what?*
 
 Ok, so we have everything documented, now what do we do? Ideally, I could store it online, track the changes that I make, make it available to others to replicate the code, etc.
 
@@ -96,7 +94,7 @@ If you are saying "I don't develop software, I am done with this page", hold on!
   
   + Collaboration: Provides tools for multiple individuals to work on the same project simultaneously. Features like pull requests and code reviews make it easy to collaborate with peers or mentors on research projects or assignments. 
   
-  + Project Management: The issue tracking system allows you to organize and prioritize tasks, making it a valuable tool for project management.
+  + Project Management: The [issue tracking system](https://github.com/jacobtnyoung/reproducible-research/issues) allows you to organize and prioritize tasks, making it a valuable tool for project management.
   
   + Showcasing Work: GitHub serves as an online portfolio of your projects, making it an excellent platform to showcase your skills to potential employers or colleagues.
   
