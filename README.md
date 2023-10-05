@@ -38,15 +38,23 @@ This page is for the ASU CCJ SIMD Workshop. We will discuss why you should consi
 
 ### *How do we do it?*
 
-Data-driven documents! Specifically, RMarkdown!!!
+RMarkdown and GitHub!
 
 <br>
 
-#### *What is RMarkdown?*
+## *What is RMarkdown?*
 
 RMarkdown is a dynamic document format that combines the power of R programming language and Markdown syntax. It allows you to integrate code, text, and visualizations into a single document. RMarkdown documents can be easily converted to various output formats, such as PDF, HTML, Word, and more.  
 
-Features: 
+<br>
+
+### *An example...*
+
+Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-manuscript.pdf).
+
+<br>
+
+### *Features of RMarkdown:* 
 
   + Code Integration: Embed R code chunks within your document for data analysis and visualization.
  
@@ -62,15 +70,25 @@ Features:
 
 <br>
 
-Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-manuscript.pdf).
+*Now*, let's take a look at the RMarkdown file that created the manuscript above: ["reproducible-manuscript.Rmd"](reproducible-manuscript.Rmd).
 
-Now, let's take a look at the RMarkdown file that created the document: ["reproducible-manuscript.Rmd"](reproducible-manuscript.Rmd).
+<br>
+
+### *What next?*
+
+Ok, so we have everything documented, now what do we do? Ideally, I could store it online, track the changes that I make, make it available to others to replicate the code, etc.
+
+GitHub does that!
 
 <br>
 
 ## ***Working with GitHub***
 
 [GitHub](https://github.com/) is a web-based platform for software development and collaboration. It primarily facilitates version control, project management, and team collaboration for software projects.
+
+If you are saying "I don't develop software, I am done with this page", hold on!
+
+<br>
 
 ### *Why use GitHub?*
 
@@ -84,3 +102,6 @@ Now, let's take a look at the RMarkdown file that created the document: ["reprod
   
   + Community and Networking: GitHub hosts a vast community of developers and researchers. Engaging with this community can provide valuable insights, feedback, and networking opportunities, which can be beneficial for academic and career growth.
   
+<br>
+
+So, for all these reasons (and more!), GitHub is an excellent platform for conducting reproducible research.
