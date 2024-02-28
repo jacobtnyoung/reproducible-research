@@ -1,12 +1,35 @@
 # **Reproducible Research using Markdown and GitHub**
 
-This page is for the ASU CCJ SIMD Workshop. We will discuss why you should consider doing reproducible research and how to do it using Markdown and Github.
+This page offers a brief introduction to doing reproducible research using RMarkdown and Github. Reproducible research is part of a larger Open Science movement to develop transparency, reproducibility, replication, and so on in science.
 
 <br>
 
+----
+
 ## **Reproducible Research**
 
-### *What is it?*  
+<br>
+
+Let's start with an example. Take a look at the following image:
+
+![](https://github.com/jacobtnyoung/PAF-593-project/blob/main/PAF-593-workflow-map.png?raw=true)
+
+<br>
+
+*What is this?* The image above shows the workflow for a project I completed for a course. It is a project workflow map. What do maps do? They show us where things are and how you get to those things. The figure shows two several key features:  
+
+  * The three major segments of the project (these are the black boxes)
+  * Instructions for generating outputs (the blue bubbles)
+  * The data outputs of the instructions (the green bubbles)
+  * The document outputs of the instructions (the purple bubbles)
+
+What is the **route** of this map? The map shows us how to start with a raw data file and work all the way through to a project report and a project presentation. 
+
+All of the elements of reproducible research are shown in the figure about. Now, let's think about some bigger questions and look at these pieces in more detail...
+
+<br>
+
+### *What is reproducible research?*  
 
   + Documented Workflow: Reproducible research involves thoroughly documenting your research workflow, including data collection, data preprocessing, analysis, and visualization, in a clear and organized manner.
   
@@ -18,7 +41,7 @@ This page is for the ASU CCJ SIMD Workshop. We will discuss why you should consi
 
 <br>
 
-### *Why is it important?*  
+#### *Why is it important to do reproducible research?*  
 
   + Learning Best Practices: Practicing reproducible research teaches best practices in data management, code organization, and documentation.
   
@@ -36,13 +59,15 @@ This page is for the ASU CCJ SIMD Workshop. We will discuss why you should consi
   
 <br>
 
-### *How do we do it?*
+#### *How do we do it?*
 
 RMarkdown and GitHub!
 
 <br>
 
-## *What is RMarkdown?*
+----
+
+## **What is RMarkdown?**
 
 RMarkdown is a dynamic document format that combines the power of R programming language and Markdown syntax. It allows you to integrate code, text, and visualizations into a single document. RMarkdown documents can be easily converted to various output formats, such as PDF, HTML, Word, and more.  
 
@@ -51,6 +76,8 @@ RMarkdown is a dynamic document format that combines the power of R programming 
 ### *An example...*
 
 Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-manuscript.pdf).
+
+Cool right? This entire document (i.e. text, analysis, output) is all generated in a single RMarkdown file (we will check it out shortly).
 
 <br>
 
@@ -72,6 +99,8 @@ Take a look at the document called ["reproducible-manuscript.pdf"](reproducible-
 
 *Now*, let's take a look at the RMarkdown file that created the manuscript above: ["reproducible-manuscript.Rmd"](reproducible-manuscript.Rmd).
 
+<br>
+
 ### *Now what?*
 
 First thing, check out this [tutorial](https://jacobtnyoung.github.io/RWorkshop/topics/R-markdown.html) on how to use RMarkdown in RStudio. Got it? Good.
@@ -82,7 +111,9 @@ GitHub does that!
 
 <br>
 
-## ***Working with GitHub***
+----
+
+## **Working with GitHub**
 
 [GitHub](https://github.com/) is a web-based platform for software development and collaboration. It primarily facilitates version control, project management, and team collaboration for software projects.
 
@@ -105,3 +136,36 @@ If you are saying "I don't develop software, I am done with this page", hold on!
 <br>
 
 So, for all these reasons (and more!), GitHub is an excellent platform for conducting reproducible research.
+
+<br>
+
+----
+
+## **Some Examples...**
+
+Still not convinced? Let me show you a few examples with different scenarios.
+
+*Open Access Data*-So you found some boss data online and what to build a sweet workflow. Awesome. I am glad you are endorsing the ways of open science! Here is an approach you could follow:  
+
+  * [Course Project](https://github.com/jacobtnyoung/PAF-593-project)  
+  * [Open Data Site](https://github.com/jacobtnyoung/R2PhX)  
+
+*Restricted Access Data*-A lot of times we can't make data available on a repository. That is no excuse to practiced closed science! If users are not allowed to access the data you use for your project, then you still can show your work: what variables you coded, what changes you made, how you ran that model, where the table came from, and so on. Here are two examples of reproducible workflows using restricted access data:  
+
+  * [Understanding Prison Culture](https://github.com/jacobtnyoung/prison-race-code)  
+  * [Racial Attitudes and Friendship in Prison](https://github.com/jacobtnyoung/race-pins)
+
+<br>
+
+# *Summary*
+
+Well, that should get you going. If you have made it this far, then I am happy with your dedication to learning open science practices. Good luck out there!
+
+<br>
+<br>
+
+----
+
+###### Notice an error on this page? [Please report it as an issue so I can fix it](https://github.com/jacobtnyoung/reproducible-research/issues/new)
+
+<br>
