@@ -16,7 +16,7 @@ Let's start with an example. Take a look at the following image:
 
 <br>
 
-*What is this?* The image above shows the workflow for a project I completed for a course. It is a project workflow map. What do maps do? They show us where things are and how you get to those things. The figure shows two several key features:  
+*What is this?* The image above shows the workflow for a project I completed for a course. It is a project workflow map. What do maps do? They show us where things are and how you get to those things. The figure shows several key features:  
 
   * The three major segments of the project (these are the black boxes)
   * Instructions for generating outputs (the blue bubbles)
