@@ -25,7 +25,7 @@ Let's start with an example. Take a look at the following image:
 
 What is the **route** of this map? The map shows us how to start with a raw data file and work all the way through to a project report and a project presentation. 
 
-All of the elements of reproducible research are shown in the figure about. Now, let's think about some bigger questions and look at these pieces in more detail...
+All of the elements of reproducible research are shown in the figure above. Now, let's think about some bigger questions and look at these pieces in more detail...
 
 <br>
 
